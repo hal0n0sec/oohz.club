@@ -1,17 +1,10 @@
 'use client'
 
-import 'highlight.js/styles/atom-one-dark.css'
-
 import { parseDateTime } from '@zolplay/utils'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
-import Markdown from 'react-markdown'
 import Balancer from 'react-wrap-balancer'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeRaw from 'rehype-raw'
-import rehypeSlug from 'rehype-slug'
-import remarkGfm from 'remark-gfm'
 
 import { BlogPostStateLoader } from '~/app/(main)/blog/BlogPostStateLoader'
 import { BlogReactions } from '~/app/(main)/blog/BlogReactions'
@@ -24,6 +17,7 @@ import {
   UTurnLeftIcon,
 } from '~/assets'
 import { ClientOnly } from '~/components/ClientOnly'
+import { PostPortableText } from '~/components/PostPortableText'
 import { Prose } from '~/components/Prose'
 import { Button } from '~/components/ui/Button'
 import { Container } from '~/components/ui/Container'
@@ -177,20 +171,7 @@ export function BlogPostPage({
               </motion.div>
             </header>
             <Prose className="mt-8">
-              {/* <PostPortableText value={post.body} /> */}
-              <Markdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[
-                  rehypeSlug,
-                  // @ts-expect-error : 某些兼容性问题
-                  rehypeRaw,
-                  // @ts-expect-error : 具体不详
-                  rehypeHighlight,
-                ]}
-                // components={{ code: Code }}
-              >
-                {post.markdown}
-              </Markdown>
+              <PostPortableText value={post.body} />
             </Prose>
           </article>
         </div>
