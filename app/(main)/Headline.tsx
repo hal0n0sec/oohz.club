@@ -42,7 +42,7 @@ function Founder() {
   return (
     <span className="group inline-flex items-center">
       <UserSecurityIcon className="mr-1 inline-flex group-hover:fill-zinc-600/20 dark:group-hover:fill-zinc-200/20" />
-      <span>工程师</span>
+      <span>技术宅</span>
     </span>
   )
 }
@@ -77,7 +77,7 @@ export function Headline() {
           delay: 0.1,
         }}
       >
-        👋 halo, welcome to my blog! I am a network engineer from Hangzhou, and I also like research and learning about network security. I will share my study notes here!👻
+        👋 halo, welcome to my blog 👻
       </motion.p>
       <motion.div
         className="mt-6 flex gap-6"
@@ -92,33 +92,33 @@ export function Headline() {
         }}
       >
         <SocialLink
-          href="https://cali.so/twitter"
+          href="https://x.com/404_byZj1n"
           aria-label="我的推特"
           platform="twitter"
         />
-        <SocialLink
+        {/* <SocialLink
           href="https://cali.so/youtube"
           aria-label="我的 YouTube"
           platform="youtube"
-        />
-        <SocialLink
+        /> */}
+        {/* <SocialLink
           href="https://cali.so/bilibili"
           aria-label="我的 Bilibili"
           platform="bilibili"
-        />
+        /> */}
         <SocialLink
-          href="https://cali.so/github"
+          href="https://github.com/hal0n0sec"
           aria-label="我的 GitHub"
           platform="github"
         />
         <SocialLink
-          href="https://cali.so/tg"
+          href="https://t.me/takuyasec"
           aria-label="我的 Telegram"
           platform="telegram"
         />
         <SocialLink href="/feed.xml" platform="rss" aria-label="RSS 订阅" />
         <SocialLink
-          href="mailto:hi@cali.so"
+          href="qiankunhzj@gmail.com"
           aria-label="我的邮箱"
           platform="mail"
         />
