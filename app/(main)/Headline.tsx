@@ -8,7 +8,7 @@ import { SocialLink } from '~/components/links/SocialLink'
 function Developer() {
   return (
     <span className="group">
-      <span className="font-mono">&lt;</span> takuya's blog 
+      <span className="font-mono">&lt;</span> takuya&#39;s blog 
       <span className="font-mono">/&gt;</span>
       <span className="invisible inline-flex text-zinc-300 before:content-['|'] group-hover:visible group-hover:animate-typing dark:text-zinc-500" />
     </span>
@@ -77,7 +77,7 @@ export function Headline() {
           delay: 0.1,
         }}
       >
-        👋 halo, welcome to takuya's blog! I am a network engineer from Hangzhou, and I also like research and learning about network security. I will share my study notes here!👻
+        👋 halo, welcome to my blog! I am a network engineer from Hangzhou, and I also like research and learning about network security. I will share my study notes here!👻
       </motion.p>
       <motion.div
         className="mt-6 flex gap-6"
