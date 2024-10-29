@@ -95,6 +95,7 @@ export const getBlogPostQuery = groq`
       },
     }
   }`
+  
 export const getBlogPost = (slug: string) =>
   client.fetch<PostDetail | undefined, { slug: string }>(getBlogPostQuery, {
     slug,
