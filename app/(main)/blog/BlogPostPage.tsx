@@ -26,6 +26,12 @@ import { type PostDetail } from '~/sanity/schemas/post'
 
 import { BlogPostCard } from './BlogPostCard'
 import { BlogPostTableOfContents } from './BlogPostTableOfContents'
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeRaw from 'rehype-raw'
+import 'highlight.js/styles/atom-one-dark.css'
 
 export function BlogPostPage({
   post,
@@ -171,7 +177,20 @@ export function BlogPostPage({
               </motion.div>
             </header>
             <Prose className="mt-8">
-              <PostPortableText value={post.body} />
+              {/* <PostPortableText value={post.body} /> */}
+              <Markdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[
+                  rehypeSlug,
+                  // @ts-expect-error
+                  rehypeRaw,
+                  // @ts-expect-error
+                  rehypeHighlight,
+                ]}
+                // components={{ code: Code }}
+              >
+                {post.markdown}
+              </Markdown>
             </Prose>
           </article>
         </div>
