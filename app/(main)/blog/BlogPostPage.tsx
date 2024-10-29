@@ -1,10 +1,17 @@
 'use client'
 
+import 'highlight.js/styles/atom-one-dark.css'
+
 import { parseDateTime } from '@zolplay/utils'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import React from 'react'
+import Markdown from 'react-markdown'
 import Balancer from 'react-wrap-balancer'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeRaw from 'rehype-raw'
+import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
 
 import { BlogPostStateLoader } from '~/app/(main)/blog/BlogPostStateLoader'
 import { BlogReactions } from '~/app/(main)/blog/BlogReactions'
@@ -17,7 +24,6 @@ import {
   UTurnLeftIcon,
 } from '~/assets'
 import { ClientOnly } from '~/components/ClientOnly'
-import { PostPortableText } from '~/components/PostPortableText'
 import { Prose } from '~/components/Prose'
 import { Button } from '~/components/ui/Button'
 import { Container } from '~/components/ui/Container'
@@ -26,12 +32,6 @@ import { type PostDetail } from '~/sanity/schemas/post'
 
 import { BlogPostCard } from './BlogPostCard'
 import { BlogPostTableOfContents } from './BlogPostTableOfContents'
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import rehypeSlug from 'rehype-slug'
-import rehypeHighlight from 'rehype-highlight'
-import rehypeRaw from 'rehype-raw'
-import 'highlight.js/styles/atom-one-dark.css'
 
 export function BlogPostPage({
   post,
@@ -182,9 +182,9 @@ export function BlogPostPage({
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[
                   rehypeSlug,
-                  // @ts-expect-error
+                  // @ts-expect-error : 某些兼容性问题
                   rehypeRaw,
-                  // @ts-expect-error
+                  // @ts-expect-error : 具体不详
                   rehypeHighlight,
                 ]}
                 // components={{ code: Code }}
